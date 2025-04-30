@@ -1,12 +1,8 @@
-
 import { Code, Github, Linkedin, Twitter } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
-  return (
-    <footer className="bg-muted/30 border-t">
+  return <footer className="bg-muted/30 border-t">
       <div className="container mx-auto px-4 py-8 md:py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and description */}
@@ -20,31 +16,13 @@ export const Footer = () => {
               to innovative solutions, explore my work and let's connect!
             </p>
             <div className="flex space-x-4">
-              <a 
-                href="https://github.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="GitHub"
-              >
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="GitHub">
                 <Github className="h-5 w-5" />
               </a>
-              <a 
-                href="https://linkedin.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="LinkedIn"
-              >
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="LinkedIn">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a 
-                href="https://twitter.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Twitter"
-              >
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Twitter">
                 <Twitter className="h-5 w-5" />
               </a>
             </div>
@@ -93,25 +71,19 @@ export const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li className="text-muted-foreground">
                 <span>Email: </span>
-                <a 
-                  href="mailto:hello@example.com" 
-                  className="text-primary hover:underline"
-                >
+                <a href="mailto:hello@example.com" className="text-primary hover:underline">
                   hello@example.com
                 </a>
               </li>
               <li className="text-muted-foreground">
                 <span>Phone: </span>
-                <a 
-                  href="tel:+11234567890" 
-                  className="text-primary hover:underline"
-                >
+                <a href="tel:+11234567890" className="text-primary hover:underline">
                   +1 (123) 456-7890
                 </a>
               </li>
               <li className="text-muted-foreground">
                 <span>Location: </span>
-                <span>San Francisco, CA</span>
+                <span>New Ramdaspeth, Nagpur</span>
               </li>
             </ul>
           </div>
@@ -122,6 +94,5 @@ export const Footer = () => {
           © {currentYear} DevPortfolio. All rights reserved.
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
