@@ -1,8 +1,9 @@
+
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { Trophy, ArrowUp, ArrowDown } from "lucide-react";
+import { Trophy, ArrowUp, ArrowDown, ExternalLink } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
 
 // Game constants
@@ -93,7 +94,7 @@ const Game = () => {
     assets.cactus.onload = onLoad;
     
     // Load ground sprite
-    assets.ground.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAgCAYAAADaInAlAAAACXBIWXMAAAsTAAALEwEAmpwYAAABcUlEQVR4nO2ZO07DQBRFzyfKAiiBFrEASoqsggZRUGcBSUGXhoKCD7EBGkQBVEiBWAE9oqOIAk1DQ+URRSwgUSF80TiejO19jqRizpmrq2OP7TEGAAAAAAAAAPLHWvs8Go2+wzD8Cv7GGPMSBMGHtfbZdd0LY8yZ7/vHnuddpmm6R/yctXHP8w7TNJ0dDAanRZ/BZKkhPz1N0+319fXNJHVQ75Ik2R+PR/lD14VzXfeIJ1t81DEXwg+AFo7HnXHH9OSN+3//b79eIX45F9KbuiAA/tqcXp7tl2u73W53Op3farX6wfnL5XLDWrvR7XaPkiRZ4/ydTmdba2PE/6Ob91utVtL0m1VXajp+SlVLdC3RQgBCN3JEDCm5ABrxUvICiL8A4i+A+AsgfmGkFEBDU3IBNPJ1hZKPgFVK/vmvUfQiiFdCLbQueLVeq9U++Sf1x0/X9fl5CyAej8cIeTl50WQOMIyfn5+KLq1yuXzPB0Gu1OrJsu4AAAAAAAAAsJR8A7RnO7c/NtI3AAAAAElFTkSuQmCC";
+    assets.ground.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAgCAYAAADaInAlAAAACXBIWXMAAAsTAAALEwEAmpwYAAABcUlEQVR4nO2ZO07DQBRFzyfKAiiBFrEASoqsggZRUGcBSUGXhoKCD7EBGkQBVEiBWAE9oqOIAk1DQ+URRSwgUSF80TiejO59jqRizpmrq2OP7TEGAAAAAAAAAPLHWvs8Go2+wzD8Cv7GGPMSBMGHtfbZdd0LY8yZ7/vHnuddpmm6R/yctXHP8w7TNJ0dDAanRZ/BZKkhPz1N0+319fXNJHVQ75Ik2R+PR/lD14VzXfeIJ1t81DEXwg+AFo7HnXHH9OSN+3//b79eIX45F9KbuiAA/tqcXp7tl2u73W53Op3farX6wfnL5XLDWrvR7XaPkiRZ4/ydTmdba2PE/6Ob91utVtL0m1VXajp+SlVLdC3RQgBCN3JEDCm5ABrxUvICiL8A4i+A+AsgfmGkFEBDU3IBNPJ1hZKPgFVK/vmvUfQiiFdCLbQueLVeq9U++Sf1x0/X9fl5CyAej8cIeTl50WQOMIyfn5+KLq1yuXzPB0Gu1OrJsu4AAAAAAAAAsJR8A7RnO7c/NtI3AAAAAElFTkSuQmCC";
     assets.ground.onload = onLoad;
     
     // Load cloud sprite
@@ -101,7 +102,7 @@ const Game = () => {
     assets.cloud.onload = onLoad;
     
     // Load chasing dino sprite
-    assets.chasingDino.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAAAwCAYAAACVMb01AAAACXBIWXMAAAsTAAALEwEAmpwYAAAFvmlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDUgNzkuMTYzNDk5LCAyMDE4LzA4LzEzLTE2OjQwOjIyICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOSAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjQtMDQtMzBUMTA6NTU6MjArMDU6MzAiIHhtcDpNb2RpZnlEYXRlPSIyMDI0LTA0LTMwVDEwOjU2OjMzKzA1OjMwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDI0LTA0LTMwVDEwOjU2OjMzKzA1OjMwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgcGhvdG9zaG9wOklDQ1Byb2ZpbGU9InNSR0IgSUVDNjE5NjYtMi4xIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjdlZDA4YTQ2LWYwM2QtNGVjNi04ZTM1LTk5Y2MxZDIzZTQ0ZiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo3ZWQwOGE0Ni1mMDNkLTRlYzYtOGUzNS05OWNjMWQyM2U0NGYiIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo3ZWQwOGE0Ni1mMDNkLTRlYzYtOGUzNS05OWNjMWQyM2U0NGYiPiA8eG1wTU06SGlzdG9yeT4gPHJkZjpTZXE+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJjcmVhdGVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjdlZDA4YTQ2LWYwM2QtNGVjNi04ZTM1LTk5Y2MxZDIzZTQ0ZiIgc3RFdnQ6d2hlbj0iMjAyNC0wNC0zMFQxMDo1NToyMCswNTozMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKE1hY2ludG9zaCkiLz4gPC9yZGY6U2VxPiA8L3htcE1NOkhpc3Rvcnk+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+ABz7NAAAAqhJREFUaN7tmU1IVFEUx3/zjZqkjiNiVAtdJC2iL7DCiKJNEBG0MIpEXUVUi4SgVREUpLWM2tWiDxeCBEEURUVY0aIvoqJNEQVlRR/YoDXjvHmncRrvnfPeHWfGOz+4y/n/7zn//96Zd+cZUVUmGOac2V77aoay1zJf8TlV3QQcsyScB3bZ7nErsBF47pvXxz7bPZG4LpRGprkYVp1cQmQEWJOwaQxYCdwOWH8FWArUWHz05q4Gkt7cO4HVwI1KjlQpBwn2Z2jbGrLaB+Rj5nXmbgPOWHPpzZ0Ejjixx+MaFMeBlCZZL7lVb+6tWo7qVXBNnbDFpOmqpkMiEhFhL7Ap7sFwGLgJLAKqgdjJTGARcKMMJzFwCVgA1HoZGJXdJ7YDXcCxqP1FaR5we4JcOtEA9AJ7gE4nZklmDHA/zSf9ZRnAYGzNhF3A3jIMBg7gF9V1dOqiSprLMIBs5nm1nXTqohy6nMBR5q+yBLMq8tOVmO8bkptVKn9Ao1BUwWlLML+TfSj613OVC6nRGXMAr6WCa9KPXs11wOOQ3EeBh8CcFF7Q8/NOLKrglqIHc3HC3BvANKA/JHcdcBroS/EFvcWJ5V3V5zjH8FSCpzng4Ulgyyg8a7KOVNVdVS0Aa73Lm18DJitJyV3kxEKP4IKq7gduAfOBw8AMb265qtYCpRSedTt11nsN9+/JPVw/qqqD3t/HVTXdnOxiHr1hjsuJqp5Q1T5TjK2XpQBMBUYteQvGpfR08Fz6O/W6iCWWvMMicto3Pl3h5y0OOmgPAk8DJqbbPmFibNqHM/NA6VTAKPAA6Af+Bd36BcAvYLPltAfYZ7lp1nuckpjuAtdS1OyQJVcOaPbqnvZq0JnQ+tFXg0FV7QnxMKKqPal9B/5vJiYmUol/Cz2UsTc9y04AAAAASUVORK5CYII=";
+    assets.chasingDino.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAAAwCAYAAACVMb01AAAACXBIWXMAAAsTAAALEwEAmpwYAAAFvmlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDUgNzkuMTYzNDk5LCAyMDE4LzA4LzEzLTE2OjQwOjIyICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOSAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjQtMDQtMzBUMTA6NTU6MjArMDU6MzAiIHhtcDpNb2RpZnlEYXRlPSIyMDI0LTA0LTMwVDEwOjU2OjMzKzA1OjMwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDI0LTA0LTMwVDEwOjU2OjMzKzA1OjMwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgcGhvdG9zaG9wOklDQ1Byb2ZpbGU9InNSR0IgSUVDNjE5NjYtMi4xIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjdlZDA4YTQ2LWYwM2QtNGVjNi04ZTM1LTk5Y2MxZDIzZTQ0ZiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo3ZWQwOGE0Ni1mMDNkLTRlYzYtOGUzNS05OWNjMWQyM2U0NGYiIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo3ZWQwOGE0Ni1mMDNkLTRlYzYtOGUzNS05OWNjMWQyM2U0NGYiPiA8eG1wTU06SGlzdG9yeT4gPHJkZjpTZXE+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJjcmVhdGVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjdlZDA4YTQ2LWYwM2QtNGVjNi04ZTM1LTk5Y2MxZDIzZTQ0ZiIgc3RFdnQ6d2hlbj0iMjAyNC0wNC0zMFQxMDo1NToyMCswNTozMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKE1hY2ludG9zaCkiLz4gPC9yZGY6U2VxPiA8L3htcE1NOkhpc3Rvcnk+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+ABz7NAAAAqhJREFUaN7tmU1IVFEUx3/zjZqkjiNiVAtdJC2iL7DCiKJNEBG0MIpEXUVUi4SgVREUpLWM2tWiDxeCBEEURUVY0aIvoqJNEQVlRR/YoDXjvHmncRrvnfPeHWfGOz+4y/n/7zn//96Zd+cZUVUmGOac2V77aoay1zJf8TlV3QQcsyScB3bZ7nErsBF47pvXxz7bPZG4LpRGprkYVp1cQmQEWJOwaQxYCdwOWH8FWArUWHz05q4Gkt7cO4HVwI1KjlQpBwn2Z2jbGrLaB+Rj5nXmbgPOWHPpzZ0Ejjixx+MaFMeBlCZZL7lVb+6tWo7qVXBNnbDFpOmqpkMiEhFhL7Ap7sFwGLgJLAKqgdjJTGARcKMMJzFwCVgA1HoZGJXdJ7YDXcCxqP1FaR5we4JcOtEA9AJ7gE4nZklmDHA/zSf9ZRnAYGzNhF3A3jIMBg7gF9V1dOqiSprLMIBs5nm1nXTqohy6nMBR5q+yBLMq8tOVmO8bkptVKn9Ao1BUwWlLML+TfSj613OVC6nRGXMAr6WCa9KPXs11wOOQ3EeBh8CcFF7Q8/NOLKrglqIHc3HC3BvANKA/JHcdcBroS/EFvcWJ5V3V5zjH8FSCpzng4Ulgyyg8a7KOVNVdVS0Aa73Lm18DJitJyV3kxEKP4IKq7gduAfOBw8AMb265qtYCpRSedTt11nsN9+/JPVw/qqqD3t/HVTXdnOxiHr1hjsuJqp5Q1T5TjK2XpQBMBUYteQvGpfR08Fz6O/W6iCWWvMMicto3Pl3h5y0OOmgPAk8DJqbbPmFibNqHM/NA6VTAKPAA6Af+Bd36BcAvYLPlxAfYZ7lp1nuckpjuAtdS1OyQJVcOaPbqnvZq0JnQ+tFXg0FV7QnxMKKqPal9B/5vJiYmUol/Cz2UsTc9y04AAAAASUVORK5CYII=";
     assets.chasingDino.onload = onLoad;
 
     // Initialize game loop once assets are loaded
@@ -387,4 +388,219 @@ const Game = () => {
     const assets = assetsRef.current;
     
     // Draw ground
-    for (let i = 0; i < canvas.width; i += 
+    for (let i = 0; i < canvas.width; i += assets.ground.width) {
+      ctx.drawImage(assets.ground, i, groundY);
+    }
+    
+    // Draw clouds (purely decorative)
+    ctx.drawImage(assets.cloud, canvas.width * 0.3, groundY - 100, 60, 30);
+    ctx.drawImage(assets.cloud, canvas.width * 0.7, groundY - 80, 40, 20);
+    
+    // Draw obstacles
+    for (const obstacle of gameState.obstacles) {
+      ctx.drawImage(
+        assets.cactus,
+        obstacle.x,
+        groundY - obstacle.height,
+        obstacle.width,
+        obstacle.height
+      );
+    }
+    
+    // Draw chasing dinosaur
+    const dino = gameState.chasingDino;
+    ctx.drawImage(
+      assets.chasingDino,
+      dino.frameX, 0, 44, 48,
+      dino.x, groundY - dino.height, dino.width, dino.height
+    );
+    
+    // Draw Mario
+    const mario = gameState.mario;
+    ctx.drawImage(
+      assets.mario,
+      mario.frameX, 0, 44, 52,
+      mario.x, groundY - mario.height + mario.y, mario.width, mario.height
+    );
+    
+    // Draw score
+    ctx.fillStyle = "#333";
+    ctx.font = "16px 'Arial'";
+    ctx.textAlign = "left";
+    ctx.fillText(`Score: ${score}`, 20, 30);
+    ctx.fillText(`High Score: ${Math.max(highScore, score)}`, 20, 50);
+  };
+  
+  // Handle jump
+  const handleJump = () => {
+    if (!isPlaying) {
+      // Start game if not playing
+      startGame();
+    } else if (!gameOver) {
+      // Jump if game is active
+      const mario = gameStateRef.current.mario;
+      if (!mario.isJumping) {
+        mario.isJumping = true;
+        mario.velocityY = JUMP_FORCE;
+      }
+    } else {
+      // Restart game if game over
+      startGame();
+    }
+  };
+  
+  // Handle keyboard input
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.code === "Space" || e.key === " " || e.key === "ArrowUp") {
+        e.preventDefault();
+        handleJump();
+      }
+    };
+    
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isPlaying, gameOver]);
+  
+  // Load high score from local storage
+  useEffect(() => {
+    const savedHighScore = localStorage.getItem("marioRunnerHighScore");
+    if (savedHighScore) {
+      setHighScore(parseInt(savedHighScore));
+    }
+  }, []);
+  
+  // Toggle external game display
+  const toggleExternalGame = () => {
+    setShowExternalGame(!showExternalGame);
+    if (!showExternalGame) {
+      toast({
+        title: "External Game Loaded",
+        description: "Now showing the reference Mario runner game.",
+      });
+    }
+  };
+
+  return (
+    <div className="container py-8 mt-16 min-h-screen">
+      <div className="flex flex-col items-center">
+        <div className="w-full max-w-4xl">
+          {/* Game Header */}
+          <div className="mb-6 text-center">
+            <h1 className="text-3xl font-bold mb-2">Mario Runner Game</h1>
+            <p className="text-muted-foreground">
+              Jump over obstacles and see how far you can go!
+            </p>
+          </div>
+
+          {/* Game Container */}
+          <div className="relative mb-6">
+            {showExternalGame ? (
+              <div className="w-full h-[400px] relative border border-border rounded-md overflow-hidden">
+                <iframe 
+                  src="https://chromedino.com/mario/" 
+                  frameBorder="0" 
+                  scrolling="no" 
+                  width="100%" 
+                  height="100%" 
+                  loading="lazy"
+                  className="absolute w-full h-full z-10"
+                ></iframe>
+              </div>
+            ) : (
+              <Card className="overflow-hidden w-full">
+                <CardContent className="p-0 relative">
+                  <canvas
+                    ref={canvasRef}
+                    width={GAME_WIDTH}
+                    height={GAME_HEIGHT}
+                    className="w-full h-auto bg-background cursor-pointer"
+                    onClick={handleJump}
+                    onTouchStart={handleJump}
+                  />
+                  
+                  {/* Mobile Controls */}
+                  {isMobile && isPlaying && !gameOver && (
+                    <div className="absolute bottom-4 right-4 flex gap-2">
+                      <Button 
+                        variant="outline" 
+                        size="icon"
+                        onClick={handleJump}
+                        className="bg-primary/30 backdrop-blur-sm"
+                      >
+                        <ArrowUp className="h-6 w-6" />
+                      </Button>
+                    </div>
+                  )}
+                  
+                  {/* Instruction overlay */}
+                  {isInstructionsOpen && !isPlaying && (
+                    <div className="absolute inset-0 bg-background/80 flex items-center justify-center p-6">
+                      <div className="max-w-md text-center">
+                        <h3 className="text-xl font-bold mb-4">How to Play</h3>
+                        <ul className="text-left space-y-2 mb-4">
+                          <li>• Press <strong>Space</strong> or <strong>Click/Tap</strong> to start the game</li>
+                          <li>• Press <strong>Space</strong> or <strong>Up Arrow</strong> or <strong>Tap</strong> to jump</li>
+                          <li>• Avoid obstacles to score points</li>
+                          <li>• Game speeds up as you progress</li>
+                        </ul>
+                        <Button onClick={() => setIsInstructionsOpen(false)}>
+                          Got it!
+                        </Button>
+                      </div>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            )}
+          </div>
+          
+          {/* Game Controls */}
+          <div className="flex flex-wrap gap-3 justify-center mb-6">
+            <Button variant="outline" onClick={() => setIsInstructionsOpen(true)}>
+              How to Play
+            </Button>
+            <Button onClick={handleJump} disabled={isPlaying && !gameOver}>
+              {!isPlaying ? "Start Game" : gameOver ? "Play Again" : "Playing..."}
+            </Button>
+            <Button variant="outline" onClick={toggleExternalGame}>
+              {showExternalGame ? "Show Local Game" : "Show Reference Game"}
+            </Button>
+          </div>
+          
+          {/* High Scores */}
+          <Card>
+            <CardContent className="p-6">
+              <div className="flex items-center gap-4 mb-4">
+                <Trophy className="h-6 w-6 text-yellow-500" />
+                <h3 className="text-lg font-semibold">High Scores</h3>
+              </div>
+              <div className="flex justify-between items-center">
+                <div>
+                  <p className="text-sm text-muted-foreground">Current Score</p>
+                  <p className="text-2xl font-bold">{score}</p>
+                </div>
+                <div>
+                  <p className="text-sm text-muted-foreground">High Score</p>
+                  <p className="text-2xl font-bold">{highScore}</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+          
+          {/* About Section */}
+          <div className="mt-6 text-sm text-muted-foreground">
+            <p>
+              This game is inspired by Google Chrome's T-Rex game but with Mario as the main character.
+              The original game can be found at <a href="https://chromedino.com/" target="_blank" rel="noreferrer" className="text-primary inline-flex items-center">
+                chromedino.com <ExternalLink className="h-3 w-3 ml-1" />
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Game;
