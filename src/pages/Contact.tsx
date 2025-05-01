@@ -171,10 +171,10 @@ const Contact = () => {
                   <div>
                     <h3 className="font-medium mb-1">Phone</h3>
                     <a 
-                      href="tel:+11234567890" 
+                      href="tel:9112108814" 
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
-                      +1 (123) 456-7890
+                      +91 9112108814
                     </a>
                   </div>
                 </CardContent>
@@ -186,7 +186,7 @@ const Contact = () => {
                   <div>
                     <h3 className="font-medium mb-1">Location</h3>
                     <p className="text-muted-foreground">
-                      San Francisco, California, USA
+                      New Ramdaspeth, Nagpur
                     </p>
                   </div>
                 </CardContent>
