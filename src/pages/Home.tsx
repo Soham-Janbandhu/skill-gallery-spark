@@ -24,7 +24,7 @@ const Home = () => {
                           ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`}
               style={{ animationDelay: '0.2s' }}
             >
-              <span className="text-primary">Hello, I'm</span> John Doe
+              <span className="text-primary">Hello, I'm</span> Soham Janabandhu
             </h1>
             <p 
               className={`text-xl md:text-2xl text-muted-foreground mb-8 
