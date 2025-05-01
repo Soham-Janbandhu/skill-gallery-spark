@@ -71,14 +71,14 @@ export const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li className="text-muted-foreground">
                 <span>Email: </span>
-                <a href="mailto:hello@example.com" className="text-primary hover:underline">
-                  hello@example.com
+                <a href="mailto:sohamjanbandhu08@gmail.com" className="text-primary hover:underline">
+                  sohamjanbandhu08@gmail.com
                 </a>
               </li>
               <li className="text-muted-foreground">
                 <span>Phone: </span>
-                <a href="tel:+11234567890" className="text-primary hover:underline">
-                  +1 (123) 456-7890
+                <a href="tel:9112108814" className="text-primary hover:underline">
+                  +91 9112108814
                 </a>
               </li>
               <li className="text-muted-foreground">
