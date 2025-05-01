@@ -77,7 +77,7 @@ const Contact = () => {
                     <Input 
                       id="name"
                       name="name"
-                      placeholder="John Doe"
+                      placeholder="Soham Janabandhu"
                       value={formData.name}
                       onChange={handleChange}
                       required
@@ -90,7 +90,7 @@ const Contact = () => {
                       id="email"
                       name="email"
                       type="email"
-                      placeholder="john@example.com"
+                      placeholder="sohamjanbandhu08@gmail.com"
                       value={formData.email}
                       onChange={handleChange}
                       required
@@ -156,10 +156,10 @@ const Contact = () => {
                   <div>
                     <h3 className="font-medium mb-1">Email</h3>
                     <a 
-                      href="mailto:hello@example.com" 
+                      href="mailto:sohamjanbandhu08@gmail.com" 
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
-                      hello@example.com
+                      sohamjanbandhu08@gmail.com
                     </a>
                   </div>
                 </CardContent>
