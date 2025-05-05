@@ -45,7 +45,7 @@ const Home = () => {
                 </Link>
               </Button>
               <Button variant="outline" className="font-medium">
-                <a href="/resume.pdf" download>
+                <a href="/resume.pdf" download className="flex">
                   Download Resume
                   <Download className="ml-2 h-4 w-4" />
                 </a>
