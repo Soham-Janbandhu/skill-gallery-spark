@@ -90,7 +90,7 @@ const Contact = () => {
                       id="email"
                       name="email"
                       type="email"
-                      placeholder="sohamjanbandhu08@gmail.com"
+                      placeholder="example@gmail.com"
                       value={formData.email}
                       onChange={handleChange}
                       required
