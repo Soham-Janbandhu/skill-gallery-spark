@@ -1,12 +1,54 @@
 
-import { ArrowDown, ArrowRight, Briefcase, Code, Download, Trophy } from 'lucide-react';
+import { ArrowDown, ArrowRight, Briefcase, Code, Download, ExternalLink, Github, Trophy } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+
+// Import the project data from the Projects page
+const projectsData = [
+  {
+    id: 1,
+    title: 'E-Commerce Platform',
+    description: 'A full-featured e-commerce platform with product listings, cart functionality, and secure checkout.',
+    image: '',
+    category: 'web',
+    technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
+    githubUrl: 'https://github.com',
+    liveUrl: 'https://example.com',
+    likes: 24,
+    featured: true
+  },
+  {
+    id: 2,
+    title: 'Task Management App',
+    description: 'A productivity app for organizing tasks with drag-and-drop functionality and user authentication.',
+    image: '',
+    category: 'web',
+    technologies: ['React', 'Firebase', 'Tailwind CSS'],
+    githubUrl: 'https://github.com',
+    liveUrl: 'https://example.com',
+    likes: 18,
+    featured: true
+  },
+  {
+    id: 3,
+    title: 'Weather Dashboard',
+    description: 'Real-time weather forecasting app with location detection and interactive charts.',
+    image: '',
+    category: 'web',
+    technologies: ['JavaScript', 'Chart.js', 'Weather API'],
+    githubUrl: 'https://github.com',
+    liveUrl: 'https://example.com',
+    likes: 12,
+    featured: true
+  }
+];
 
 const Home = () => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const featuredProjects = projectsData.filter(project => project.featured).slice(0, 3);
 
   useEffect(() => {
     setIsLoaded(true);
@@ -74,33 +116,42 @@ const Home = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3].map((item) => (
-              <Card key={item} className="hover-scale overflow-hidden bg-card border border-border">
+            {featuredProjects.map((project) => (
+              <Card key={project.id} className="hover-scale overflow-hidden bg-card border border-border">
                 <div className="relative aspect-video overflow-hidden bg-muted">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-secondary/30" />
+                  <div className={`absolute inset-0 bg-gradient-to-br 
+                                ${project.category === 'web' ? 'from-primary/30 to-secondary/30' : 
+                                  project.category === 'data' ? 'from-blue-500/30 to-purple-500/30' :
+                                  'from-green-500/30 to-yellow-500/30'}`} />
                   <Code className="absolute inset-0 m-auto h-12 w-12 text-primary" />
                 </div>
                 <CardContent className="p-6">
                   <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-xl font-semibold">Project {item}</h3>
-                    <span className="text-xs bg-muted px-2 py-1 rounded-full">Web App</span>
+                    <h3 className="text-xl font-semibold">{project.title}</h3>
+                    <Badge variant="outline" className="capitalize">
+                      {project.category}
+                    </Badge>
                   </div>
                   <p className="text-muted-foreground text-sm mb-4">
-                    A brief description of project {item} showcasing key features and technologies used.
+                    {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">React</span>
-                    <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">TypeScript</span>
-                    <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">TailwindCSS</span>
+                    {project.technologies.map((tech, i) => (
+                      <Badge key={i} variant="secondary" className="bg-primary/10 text-primary">
+                        {tech}
+                      </Badge>
+                    ))}
                   </div>
                   <div className="flex justify-between">
                     <Button variant="link" className="p-0 h-auto" asChild>
-                      <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                        <Github className="h-4 w-4 mr-2" />
                         Source Code
                       </a>
                     </Button>
                     <Button variant="link" className="p-0 h-auto" asChild>
-                      <a href="https://example.com" target="_blank" rel="noopener noreferrer">
+                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-4 w-4 mr-2" />
                         Live Demo
                       </a>
                     </Button>
