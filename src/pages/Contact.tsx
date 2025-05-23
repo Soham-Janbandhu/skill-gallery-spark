@@ -199,7 +199,7 @@ const Contact = () => {
                     <h3 className="font-medium mb-1">Social Media</h3>
                     <div className="flex space-x-4 mt-2">
                       <a 
-                        href="https://github.com" 
+                        href="https://github.com/Soham-Janbandhu" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="text-muted-foreground hover:text-primary transition-colors"
@@ -207,7 +207,7 @@ const Contact = () => {
                         GitHub
                       </a>
                       <a 
-                        href="https://linkedin.com" 
+                        href="https://www.linkedin.com/in/soham-janbandhu" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="text-muted-foreground hover:text-primary transition-colors"
@@ -215,7 +215,7 @@ const Contact = () => {
                         LinkedIn
                       </a>
                       <a 
-                        href="https://twitter.com" 
+                        href="https://x.com/SOHAMJANBANDHU?t=k08VqMhqWhAw2gYbk3QRCQ&s=09" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="text-muted-foreground hover:text-primary transition-colors"
@@ -239,13 +239,22 @@ const Contact = () => {
               My Location
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Based in San Francisco, California
+              Based in New Ramdashpeth, Nagpur, Maharashtra, India
             </p>
           </div>
           
           <div className="aspect-video max-w-4xl mx-auto overflow-hidden rounded-lg border border-border bg-muted flex items-center justify-center">
-            <MapPin className="h-16 w-16 text-muted-foreground" />
-            <span className="ml-4 text-lg text-muted-foreground">Map placeholder</span>
+            <div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.4503164223743!2d79.0701328!3d21.134470099999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c088d2d6baf3%3A0xbf9c77b975ab2a13!2s204%2C%20Ramdaspeth%2C%20Nagpur%2C%20Maharashtra%20440012!5e0!3m2!1sen!2sin!4v1747994241397!5m2!1sen!2sin"
+              width="900"
+              height="510"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+            </div>
           </div>
         </div>
       </section>
