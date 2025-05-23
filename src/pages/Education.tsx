@@ -8,53 +8,53 @@ import { cn } from "@/lib/utils";
 const educationData = [
   {
     id: 1,
-    degree: "Master of Science in Computer Science",
-    institution: "Stanford University",
-    location: "Stanford, CA",
-    period: "2016 - 2018",
-    description: "Specialized in artificial intelligence and machine learning. Completed thesis on neural networks for natural language processing."
+    degree: "Master of Computer Management",
+    institution: "RTMNU University",
+    location: "Nagpur, Maharashtra, India",
+    period: "2024 - persuing",
+    description: "In Computer Management with a focus on programming, web development, databases, cybersecurity, and emerging technologies like AI and Big Data."
   },
   {
     id: 2,
-    degree: "Bachelor of Science in Software Engineering",
-    institution: "University of Washington",
-    location: "Seattle, WA",
-    period: "2012 - 2016",
-    description: "Graduated with honors. Focused on web development and software architecture. Participated in various hackathons and coding competitions."
+    degree: "Java Full Stack Development Certification",
+    institution: "Qspiders -Training and Deveopment Institute",
+    location: "Pune",
+    period: "2022 - 2023",
+    description: "Trained in Java, manual testing, SQL, and web technologies with real-time project exposure at QSpiders."
   },
   {
     id: 3,
-    degree: "Full-Stack Web Development Bootcamp",
-    institution: "Tech Academy",
-    location: "San Francisco, CA",
-    period: "Summer 2015",
-    description: "Intensive 12-week program covering modern web development technologies and best practices."
+    degree: "B.E. in Computer Science and Engineering",
+    institution: "RTMNU",
+    location: "Nagpur, Maharashtra, India",
+    period: "2017 - 2022",
+    description: "Graduated with honors. Focused on web development and software architecture. Participated in various hackathons and coding competitions."
   }
 ];
 
 const experienceData = [
   {
     id: 1,
-    position: "Senior Frontend Developer",
-    company: "Tech Innovations Inc.",
-    location: "San Francisco, CA",
-    period: "2020 - Present",
-    description: "Lead the frontend development team for multiple web applications. Implemented modern UI/UX designs and improved performance metrics by 40%."
-  },
-  {
-    id: 2,
-    position: "Full Stack Developer",
-    company: "Digital Solutions",
-    location: "Seattle, WA",
-    period: "2018 - 2020",
+    position: "Junior Full Stack Developer",
+    company: "Svagam LLC USA",
+    location: "Frisco, Texas",
+    period: "2024 - current",
     description: "Developed and maintained web applications for enterprise clients. Implemented RESTful APIs and integrated with third-party services."
   },
   {
+    id: 2,
+    position: "Frontend Developer Intern",
+    company: "Svagam LLC USA",
+    location: "Frisco, Texas",
+    period: "January 2024 - March 2024",
+    description: "Lead the frontend development team for multiple web applications. Implemented modern UI/UX designs and improved performance metrics by 40%."
+  },
+  {
     id: 3,
-    position: "Web Development Intern",
-    company: "StartUp Hub",
-    location: "Portland, OR",
-    period: "Summer 2017",
+    position: "TRAINEE, IT-INTERNSHIP",
+    company: "IT-NETWORK INFOSYSTEMS PVT. LTD.",
+    location: "Nagpur, Maharashtra, India",
+    period: "Summer 2019",
     description: "Assisted in the development of responsive web applications. Collaborated with designers to implement UI components."
   }
 ];
@@ -63,25 +63,39 @@ const experienceData = [
 const certificatesData = [
   {
     id: 1,
-    name: "AWS Certified Solutions Architect",
-    issuer: "Amazon Web Services",
-    date: "2021",
-    description: "Expertise in designing distributed systems on AWS."
+    name: "Java Full Stack Development",
+    issuer: "Qspiders -Training and Deveopment Institute",
+    date: "2023",
+    description: "Trained in Java, manual testing, SQL, and web technologies with real-time project exposure at QSpiders."
   },
   {
-    id: 2,
-    name: "Google Professional Cloud Developer",
-    issuer: "Google Cloud",
-    date: "2020",
-    description: "Skills in developing and managing applications on Google Cloud Platform."
-  },
-  {
-    id: 3,
-    name: "React Advanced Concepts",
-    issuer: "Frontend Masters",
+    id: 1,
+    name: "Web Technologies Fundamentals",
+    issuer: "IT-NETWORK INFOSYSTEMS PVT. LTD.",
     date: "2019",
-    description: "Deep dive into advanced React patterns and performance optimization."
-  }
+    description: "Intensive 8-week program covering modern web development technologies and best practices."
+  },
+  // {
+  //   id: 1,
+  //   name: "AWS Certified Solutions Architect",
+  //   issuer: "Amazon Web Services",
+  //   date: "2021",
+  //   description: "Expertise in designing distributed systems on AWS."
+  // },
+  // {
+  //   id: 2,
+  //   name: "Google Professional Cloud Developer",
+  //   issuer: "Google Cloud",
+  //   date: "2020",
+  //   description: "Skills in developing and managing applications on Google Cloud Platform."
+  // },
+  // {
+  //   id: 3,
+  //   name: "React Advanced Concepts",
+  //   issuer: "Frontend Masters",
+  //   date: "2019",
+  //   description: "Deep dive into advanced React patterns and performance optimization."
+  // }
 ];
 
 const Education = () => {
