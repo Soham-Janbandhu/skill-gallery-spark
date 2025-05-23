@@ -20,10 +20,10 @@ const About = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setSkills([
-        { name: 'JavaScript', value: 90 },
-        { name: 'TypeScript', value: 85 },
-        { name: 'React', value: 95 },
-        { name: 'Node.js', value: 80 },
+        { name: 'JavaScript', value: 71 },
+        { name: 'TypeScript', value: 68 },
+        { name: 'React', value: 75 },
+        { name: 'Node.js', value: 70 },
         { name: 'CSS/SASS', value: 85 },
         { name: 'UI/UX Design', value: 75 },
       ]);
@@ -42,7 +42,7 @@ const About = () => {
             <div className="animate-slide-in-left">
               <h1 className="text-3xl md:text-4xl font-bold mb-4">About Me</h1>
               <p className="text-muted-foreground mb-6">
-                I'm a passionate full-stack developer with over 5 years of experience building 
+                I'm a passionate full-stack developer with over 2 years of experience building 
                 modern web applications. My journey in the world of programming started when 
                 I was in college, and since then, I've been constantly learning and improving my skills.
               </p>
@@ -62,8 +62,9 @@ const About = () => {
             </div>
             <div className="relative animate-slide-in-right">
               <div className="aspect-square bg-muted rounded-xl overflow-hidden border border-border">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20" />
-                <Code className="absolute inset-0 m-auto h-16 w-16 text-primary" />
+                <div className="absolute inset-0" />
+                <img src='src\assets\profile.jpg'></img>
+                {/* <Code className="absolute inset-0 m-auto h-16 w-16 text-primary" /> */}
               </div>
             </div>
           </div>
