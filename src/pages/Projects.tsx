@@ -12,70 +12,121 @@ import { cn } from '@/lib/utils';
 const projectsData = [
   {
     id: 1,
-    title: 'E-Commerce Platform',
-    description: 'A full-featured e-commerce platform with product listings, cart functionality, and secure checkout.',
+    title: 'Movie Bash',
+    description: 'A web application for browsing and searching movies, showcasing integration with external movie APIs.',
     image: '',
-    category: 'web',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
-    githubUrl: 'https://github.com',
+    category: 'backend',
+    technologies: ['Java'],
+    githubUrl: 'https://github.com/SOHAMJANBANDHU/Task-Management-Web-Application-Frontend',
     liveUrl: 'https://example.com',
-    likes: 24
-  },
-  {
+    likes: 7
+  },{
     id: 2,
-    title: 'Task Management App',
-    description: 'A productivity app for organizing tasks with drag-and-drop functionality and user authentication.',
+    title: 'Attendance Management System',
+    description: 'A web-based application to manage and track student attendance efficiently, replacing traditional paper-based methods.',
     image: '',
     category: 'web',
-    technologies: ['React', 'Firebase', 'Tailwind CSS'],
-    githubUrl: 'https://github.com',
+    technologies: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
+    githubUrl: 'https://github.com/SOHAMJANBANDHU/Attendance-Management-System',
     liveUrl: 'https://example.com',
-    likes: 18
-  },
-  {
+    likes: 26
+  },{
     id: 3,
-    title: 'Weather Dashboard',
-    description: 'Real-time weather forecasting app with location detection and interactive charts.',
+    title: 'Task Management Web Application',
+    description: 'A full-stack task management application with user authentication, allowing users to create, update, and delete tasks.',
     image: '',
     category: 'web',
-    technologies: ['JavaScript', 'Chart.js', 'Weather API'],
-    githubUrl: 'https://github.com',
+    technologies: ['React', 'Node.js', 'Express', 'MongoDB'],
+    githubUrl: 'https://github.com/SOHAMJANBANDHU/Task-Management-Web-Application-Frontend',
+    liveUrl: 'https://example.com',
+    likes: 23
+  },{
+    id: 4,
+    title: 'Node.js Backend Task',
+    description: 'A Node.js backend project demonstrating RESTful API development with Express and MongoDB.',
+    image: '',
+    category: 'backend',
+    technologies: ['React', 'Node.js', 'Express', 'MongoDB'],
+    githubUrl: 'https://github.com/SOHAMJANBANDHU/Task-Management-Web-Application-Frontend',
     liveUrl: 'https://example.com',
     likes: 12
-  },
-  {
-    id: 4,
-    title: 'Social Media Dashboard',
-    description: 'Analytics dashboard for tracking engagement across multiple social media platforms.',
-    image: '',
-    category: 'data',
-    technologies: ['React', 'D3.js', 'REST API'],
-    githubUrl: 'https://github.com',
-    liveUrl: 'https://example.com',
-    likes: 31
-  },
-  {
+  },{
     id: 5,
-    title: 'Portfolio Generator',
-    description: 'A tool that helps developers create beautiful portfolio websites without coding.',
+    title: 'The Memoir',
+    description: 'A clean and elegant hotel landing page built using HTML, CSS, and JavaScript.',
     image: '',
-    category: 'tools',
-    technologies: ['TypeScript', 'React', 'Node.js'],
-    githubUrl: 'https://github.com',
-    liveUrl: 'https://example.com',
-    likes: 27
+    category: 'landing page',
+    technologies: ['HTML', 'CSS', 'JavaScript'],
+    githubUrl: 'https://github.com/SOHAMJANBANDHU/The-Memoir',
+    liveUrl: 'https://thememoir.life/',
+    likes: 21
   },
-  {
-    id: 6,
-    title: 'Markdown Editor',
-    description: 'Feature-rich markdown editor with live preview and file management.',
-    image: '',
-    category: 'tools',
-    technologies: ['Vue.js', 'Express', 'MongoDB'],
-    githubUrl: 'https://github.com',
-    liveUrl: 'https://example.com',
-    likes: 22
-  }
+  // {
+  //   id: 1,
+  //   title: 'E-Commerce Platform',
+  //   description: 'A full-featured e-commerce platform with product listings, cart functionality, and secure checkout.',
+  //   image: '',
+  //   category: 'web',
+  //   technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
+  //   githubUrl: 'https://github.com',
+  //   liveUrl: 'https://example.com',
+  //   likes: 24
+  // },
+  // {
+  //   id: 2,
+  //   title: 'Task Management App',
+  //   description: 'A productivity app for organizing tasks with drag-and-drop functionality and user authentication.',
+  //   image: '',
+  //   category: 'web',
+  //   technologies: ['React', 'Firebase', 'Tailwind CSS'],
+  //   githubUrl: 'https://github.com',
+  //   liveUrl: 'https://example.com',
+  //   likes: 18
+  // },
+  // {
+  //   id: 3,
+  //   title: 'Weather Dashboard',
+  //   description: 'Real-time weather forecasting app with location detection and interactive charts.',
+  //   image: '',
+  //   category: 'web',
+  //   technologies: ['JavaScript', 'Chart.js', 'Weather API'],
+  //   githubUrl: 'https://github.com',
+  //   liveUrl: 'https://example.com',
+  //   likes: 12
+  // },
+  // {
+  //   id: 4,
+  //   title: 'Social Media Dashboard',
+  //   description: 'Analytics dashboard for tracking engagement across multiple social media platforms.',
+  //   image: '',
+  //   category: 'data',
+  //   technologies: ['React', 'D3.js', 'REST API'],
+  //   githubUrl: 'https://github.com',
+  //   liveUrl: 'https://example.com',
+  //   likes: 31
+  // },
+  // {
+  //   id: 5,
+  //   title: 'Portfolio Generator',
+  //   description: 'A tool that helps developers create beautiful portfolio websites without coding.',
+  //   image: '',
+  //   category: 'tools',
+  //   technologies: ['TypeScript', 'React', 'Node.js'],
+  //   githubUrl: 'https://github.com',
+  //   liveUrl: 'https://example.com',
+  //   likes: 27
+  // },
+  // {
+  //   id: 6,
+  //   title: 'Markdown Editor',
+  //   description: 'Feature-rich markdown editor with live preview and file management.',
+  //   image: '',
+  //   category: 'tools',
+  //   technologies: ['Vue.js', 'Express', 'MongoDB'],
+  //   githubUrl: 'https://github.com',
+  //   liveUrl: 'https://example.com',
+  //   likes: 22
+  // }
 ];
 
 const Projects = () => {
