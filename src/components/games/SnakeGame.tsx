@@ -41,6 +41,7 @@ const SnakeGame = () => {
     food: { x: 0, y: 0 } as FoodPosition,
     gameLoopId: 0,
     gameSpeed: 150, // milliseconds between updates
+    toastShown: false, // Flag to track if the toast has been shown
   });
   
   // Initialize game
@@ -99,6 +100,9 @@ const SnakeGame = () => {
     
     setScore(0);
     setIsGameOver(false);
+    
+    // Reset the toast shown flag
+    gameState.toastShown = false;
     
     // Draw initial state
     if (canvasRef.current) {
@@ -302,10 +306,16 @@ const SnakeGame = () => {
       localStorage.setItem('snakeGameHighScore', score.toString());
     }
     
-    toast({
-      title: "Game Over!",
-      description: `Your score: ${score}. ${score > highScore ? "New High Score!" : ""}`,
-    });
+    // Only show toast if it hasn't been shown yet for this game over
+    if (!gameStateRef.current.toastShown) {
+      toast({
+        title: "Game Over!",
+        description: `Your score: ${score}. ${score > highScore ? "New High Score!" : ""}`,
+      });
+      
+      // Mark toast as shown
+      gameStateRef.current.toastShown = true;
+    }
   };
 
   return (
