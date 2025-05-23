@@ -9,7 +9,7 @@ export const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <Link to="/" className="flex items-center space-x-2 mb-4">
               <Code className="h-6 w-6 text-primary" />
-              <span className="font-bold text-lg tracking-wide">DevPortfolio</span>
+              <span className="font-bold text-lg tracking-wide">Nimbus</span>
             </Link>
             <p className="text-sm text-muted-foreground mb-4">
               Showcasing my journey, skills, and projects as a developer. From responsive web applications
@@ -91,7 +91,7 @@ export const Footer = () => {
         
         {/* Copyright */}
         <div className="border-t mt-8 pt-6 text-center text-sm text-muted-foreground">
-          © {currentYear} DevPortfolio. All rights reserved.
+          © {currentYear} Nimbus. All rights reserved.
         </div>
       </div>
     </footer>;
