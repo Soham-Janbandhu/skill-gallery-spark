@@ -121,7 +121,7 @@ const Home = () => {
                 </Link>
               </Button>
               <Button variant="outline" className="font-medium">
-                <a href="/resume.pdf" download className="flex">
+                <a href="src\assets\resume.pdf" download className="flex">
                   Download Resume
                   <Download className="ml-2 h-4 w-4" />
                 </a>
@@ -209,9 +209,8 @@ const Home = () => {
           
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
             {[
-              'JavaScript', 'TypeScript', 'React', 'Node.js', 'Express', 
-              'MongoDB', 'GraphQL', 'HTML5', 'CSS3', 'Tailwind CSS', 
-              'Git', 'Docker', 'AWS', 'Firebase', 'Redux'
+              'Core Java','Springboot','JavaScript', 'TypeScript', 'React', 'AngularJS', 'Node.js', 'Express', 'SQL',
+              'MongoDB', 'HTML5', 'CSS3', 'Tailwind CSS', 'Git',
             ].map((skill) => (
               <Card key={skill} className="hover-scale text-center p-4 border border-border">
                 <div className="p-2">
